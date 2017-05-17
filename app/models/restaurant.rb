@@ -4,5 +4,7 @@ class Restaurant < ApplicationRecord
   # validates :phone_number, presence: true
   validates :name, uniqueness: true, presence: true
   validates :address, presence: true
-  validates :category, presence: true
+  validates :category, presence: true, exclusion: { in: %w(neptunian),
+    message: "%{value} is reserved." }
+
 end
