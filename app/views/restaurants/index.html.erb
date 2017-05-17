@@ -1,0 +1,30 @@
+
+<div class="container text-center">
+  <div class="row">
+    <div class="col sm-10">
+      <h1>Liste de restos</h1>
+
+      <h3><%= link_to "ajouter un nouveau resto", new_restaurant_path %></h3>
+
+
+      <% @restaurants.each do |restaurant| %>
+        <h2><%= restaurant.name %></h2>
+        <p><%= restaurant.address %></p>
+        <p><%= restaurant.category %></p>
+        <ul class="list-inline">
+          <li>
+            <%= link_to "plus d'infos", restaurant_path(restaurant) %>
+          </li>
+          <li>
+            <%= link_to "Add a new review to this resto", new_restaurant_review_path(restaurant)%>
+          </li>
+          <li>
+        </ul>
+        <%end%>
+
+    </div>
+  </div>
+</div>
+
+
+
